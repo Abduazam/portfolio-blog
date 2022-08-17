@@ -1,0 +1,125 @@
+/* ===== GOOGLE FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Figtree:wght@400;500;600;700&family=Jost:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* ===== GENERAL CSS ===== */
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+}
+li {
+	list-style-type: none;
+}
+
+/* ===== SELF CLASSES ===== */
+.w-10 {
+	width: 10%!important;
+}
+.w-15 {
+	width: 15%!important;
+}
+.w-20 {
+	width: 20%!important;
+}
+
+.font-1 {
+	font-family: 'Didact Gothic', sans-serif;
+}
+.font-2 {
+	font-family: 'Montserrat', sans-serif;
+}
+.font-3 {
+	font-family: 'Lato', sans-serif;
+}
+.font-4 {
+	font-family: 'Jost', sans-serif;
+}
+.font-5 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ===== ANIMATION CSS ===== */
+.fadeInUp {
+	animation:fadeInUp 2s ease backwards;
+}
+@keyframes fadeInUp {
+	0%{transform:translate(0px, 100px); opacity: 0;}
+	100%{transform:translate(0px, 0); opacity: 1;}
+}
+
+.fadeInLeft {
+	animation: fadeInLeft 1s ease backwards;
+}
+@keyframes fadeInLeft {
+	from {
+		opacity: 0;
+		transform: translateX(-100px);
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/* ===== NAVBAR STYLE ===== */
+.navbar {
+    background: #fff;
+}
+.navbar .navbar-brand {
+	font-weight: 700;
+}
+.navbar #navbarNavDropdown ul.navbar-nav li a {
+	font-size: 18px!important;
+}
+
+/* ===== HEADER STYLE ===== */
+.header .info-container ul li a i {
+	font-size: 20px;
+}
+
+/* ===== BLOG STYLE ===== */
+#blog .blog-container .article-container {
+    transition: 0.5s all ease!important;
+}
+#blog .blog-container .article-container .fa {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: 0.5s all ease;
+}
+#blog .blog-container .article-container:hover {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    border-radius: 5px;
+}
+#blog .blog-container .article-container:hover .fa {
+    transform: none;
+    opacity: 1;
+}
+
+/* ===== PORTFOLIO STYLE ===== */
+.list-group-item {
+    border-bottom: 0.5px solid white!important;
+}
+.list-group-item.active {
+    background: none;
+    color: #333;
+    border-bottom: 0.5px solid lightgrey!important;
+}
+.hover-color-to-bg a  {
+    transition: 0.5s all ease!important;
+}
+.hover-color-to-bg:hover a {
+    box-shadow: 0 0 .5rem rgba(0,0,0,.15);
+}
+#portfolio .img-block {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+    background-position: center;
+}
+#portfolio .text-block p {
+    font-size: 15px;
+}
