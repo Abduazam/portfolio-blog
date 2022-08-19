@@ -3,8 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Category;
+use App\Models\Portfolio;
+use App\Models\Post;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\View;
+use Illuminate\View\Factory;
 
 class HomeController extends Controller
 {
@@ -13,8 +17,19 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-    public function index(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+    public function index(): Factory|View|Application
     {
-        return view('admin.home.index');
+        $portfolios = Portfolio::all();
+        $portfolios = $portfolios->count();
+        $categories = Category::all();
+        $categories = $categories->count();
+        $posts = Post::all();
+        $posts = $posts->count();
+
+        return view('admin.home.index', [
+            'categories' => $categories,
+            'portfolios' => $portfolios,
+            'posts' => $posts
+        ]);
     }
 }

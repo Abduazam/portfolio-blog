@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dashboard | @yield('title')</title>
 
+    <!-- Own style -->
+    <link rel="stylesheet" href="/backend/dist/css/style.css">
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
@@ -28,6 +30,7 @@
     <!-- Select2 -->
     <link rel="stylesheet" href="/backend/plugins/select2/css/select2.min.css">
     <link rel="stylesheet" href="/backend/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
@@ -96,7 +99,6 @@
             </div>
             <!-- /.sidebar -->
         </aside>
-
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Main content -->
@@ -141,6 +143,7 @@
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="/backend/dist/js/pages/dashboard.js"></script>
     <script src="/backend/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
     <script>
         $(function () {
             bsCustomFileInput.init();
@@ -152,6 +155,13 @@
             $('.select2bs4').select2({
                 theme: 'bootstrap4'
             })
+
+            $('textarea').summernote({
+                toolbar: [
+                    // [groupName, [list of button]]
+                    ['style', ['bold', 'italic', 'underline', 'link']],
+                ]
+            });
         });
     </script>
 </body>

@@ -122,4 +122,6 @@ li {
 }
 #portfolio .text-block p {
     font-size: 15px;
+    padding: 35px 0;
+    font-family: 'Montserrat', sans-serif;
 }

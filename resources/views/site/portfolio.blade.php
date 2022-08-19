@@ -17,15 +17,19 @@
                     <div class="tab-content" id="nav-tabContent">
                         @foreach($categories as $category)
                             <div class="tab-pane py-3 fade fadeInUp show @if($j === 1) active @endif" id="list-{{ $category->title }}" role="tabpanel" aria-labelledby="list-{{ $category->title }}-list">
-                                @foreach($category->portfolio as $portfolio)
-                                    <div class="row w-100 h-100 p-0 m-0">
+                                <div class="row w-100 h-100 p-0 m-0">
+                                    @forelse($category->portfolio as $portfolio)
                                         <div class="col-6 ps-0 hover-color-to-bg">
                                             <a href="{{ url('portfolio', ['portfolio' => $portfolio->id]) }}" class="d-block">
                                                 <img src="{{ asset('/images/' . $portfolio->img) }}" alt="{{ $portfolio->title }}" class="w-100">
                                             </a>
                                         </div>
-                                    </div>
-                                @endforeach
+                                    @empty
+                                        <div class="col-12 ps-0 text-center">
+                                            <p class="mb-0 small text-muted">There is not any project in {{ $category->title }}!</p>
+                                        </div>
+                                    @endforelse
+                                </div>
                             </div>
                             <?php ++$j ?>
                         @endforeach

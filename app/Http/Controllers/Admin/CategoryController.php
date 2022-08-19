@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Category;
-use Illuminate\Contracts\View\Factory;
+use Illuminate\View\Factory;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\View;

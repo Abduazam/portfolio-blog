@@ -34,7 +34,7 @@
                         @foreach($portfolios as $portfolio)
                             <tr>
                                 <td style="width: 10px;">{{ $portfolio->id }}</td>
-                                <td>{{ substr($portfolio->title, 0, 30) . '..' }}</td>
+                                <td>{{ substr($portfolio->title, 0, 30) }}</td>
                                 <td>
                                     @forelse($portfolio->categories as $category)
                                         <span>{{ $category->title }}, </span>
@@ -42,7 +42,7 @@
                                         <p>Nothing</p>
                                     @endforelse
                                 </td>
-                                <td>{{ substr($portfolio->text, 0, 70) . '..' }}</td>
+                                <td>{!! substr($portfolio->text, 0, 70) !!}</td>
                                 <td>
                                     @if($portfolio->status === 1)
                                         <span class="badge badge-success">Faol</span>

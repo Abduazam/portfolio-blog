@@ -36,7 +36,7 @@
                         </tr>
                         <tr>
                             <td><b>Loyiha ta'rifi</b></td>
-                            <td>{{ $portfolio->text }}</td>
+                            <td>{!! $portfolio->text !!}</td>
                         </tr>
                         <tr>
                             <td><b>Loyiha rasmi</b></td>

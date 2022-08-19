@@ -11,7 +11,7 @@
                     </div>
                     <div class="text-block">
                         <h2 class="mb-0 pt-4">{{ $portfolio->title }}</h2>
-                        <p class="font-5 py-4">{{ $portfolio->text }}</p>
+                        {!! $portfolio->text !!}
                     </div>
                 </div>
             </div>
