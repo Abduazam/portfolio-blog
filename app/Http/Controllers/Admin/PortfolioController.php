@@ -36,7 +36,7 @@ class PortfolioController extends HomeController
     {
         $request->validate([
            'title' => 'required',
-           'text' => 'required',
+           'text' => 'required|min:50',
             'img' => 'required|mimes:jpg,png,jpeg,gif',
             'cat_id' => 'required|array',
             'cat_id.*' => 'integer'
@@ -101,15 +101,15 @@ class PortfolioController extends HomeController
     {
         $request->validate([
             'title' => 'required',
-            'text' => 'required',
+            'text' => 'required|min:50',
             'img' => 'mimes:jpg,png,jpeg,gif',
             'cat_id' => 'required|array',
             'cat_id.*' => 'integer'
         ]);
 
-        try {
-            $portfolio = Portfolio::find($id);
+        $portfolio = Portfolio::find($id);
 
+        try {
             $newImageName = $portfolio->img;
             $file = 'images/' . $newImageName;
             if (isset($request->img)) {
@@ -138,7 +138,7 @@ class PortfolioController extends HomeController
                 $cat_port->save();
             }
 
-            return redirect()->route('portfolio.index');
+            return redirect()->route('portfolio.show', ['portfolio' => $portfolio->id]);
         } catch (Throwable $e) {
             report($e);
 

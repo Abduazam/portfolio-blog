@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use Throwable;
 
 class CategoryController extends HomeController
 {
@@ -47,18 +48,27 @@ class CategoryController extends HomeController
         ]);
     }
 
-    public function update(Request $request, $id): RedirectResponse
+    public function update(Request $request, $id): Factory|View|Application|RedirectResponse
     {
         $request->validate([
             'title' => 'required',
         ]);
 
         $category = Category::find($id);
-        $category->update([
-            'title' => $request->input('title'),
-        ]);
 
-        return redirect()->route('category.index');
+        try {
+            $category->update([
+                'title' => $request->input('title'),
+            ]);
+
+            return redirect()->route('category.index');
+        } catch (Throwable $e) {
+            report($e);
+
+            return view('admin.category.edit', [
+                'category' => $category
+            ]);
+        }
     }
 
     public function destroy($id): RedirectResponse

@@ -1,6 +1,10 @@
 <?php
 
-use App\Http\Controllers\Admin\{HomeController, PortfolioController, CategoryController, PostController};
+use App\Http\Controllers\Admin\{CourseController,
+    HomeController,
+    PortfolioController,
+    CategoryController,
+    PostController};
 use App\Http\Controllers\Blog\SiteController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,4 +36,5 @@ Route::middleware(['role:admin'])->prefix('admin')->group(static function () {
     Route::resource('post', PostController::class);
     Route::resource('portfolio', PortfolioController::class);
     Route::resource('category', CategoryController::class);
+    Route::resource('course', CourseController::class);
 });

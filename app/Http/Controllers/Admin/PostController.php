@@ -8,6 +8,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\Factory;
+use Throwable;
 
 class PostController extends HomeController
 {
@@ -28,7 +29,7 @@ class PostController extends HomeController
     {
         $request->validate([
             'title' => 'required',
-            'text' => 'required',
+            'text' => 'required|min:50',
             'img' => 'mimes:jpg,png,jpeg,gif'
         ]);
 
@@ -65,33 +66,41 @@ class PostController extends HomeController
         ]);
     }
 
-    public function update(Request $request, $id): RedirectResponse
+    public function update(Request $request, $id): Factory|View|Application|RedirectResponse
     {
-        $post = Post::find($id);
-
         $request->validate([
             'title' => 'required',
-            'text' => 'required',
+            'text' => 'required|min:50',
             'img' => 'mimes:jpg,png,jpeg,gif'
         ]);
 
-        $newImageName = $post->img;
-        $file = 'images/' . $newImageName;
-        if (isset($request->img)) {
-            if($newImageName !== null && file_exists($file)){
-                unlink($file);
+        $post = Post::find($id);
+
+        try {
+            $newImageName = $post->img;
+            $file = 'images/' . $newImageName;
+            if (isset($request->img)) {
+                if($newImageName !== null && file_exists($file)){
+                    unlink($file);
+                }
+                $newImageName = time() . '.' . $request->img->extension();
+                $request->img->move(public_path('images'), $newImageName);
             }
-            $newImageName = time() . '.' . $request->img->extension();
-            $request->img->move(public_path('images'), $newImageName);
+
+            $post->update([
+                'title' => $request->input('title'),
+                'text' => $request->input('text'),
+                'img' => $newImageName
+            ]);
+
+            return redirect()->route('post.show', ['post' => $post->id]);
+        } catch (Throwable $e) {
+            report($e);
+
+            return view('admin.post.edit', [
+                'post' => $post
+            ]);
         }
-
-        $post->update([
-            'title' => $request->input('title'),
-            'text' => $request->input('text'),
-            'img' => $newImageName
-        ]);
-
-        return redirect()->route('post.show', ['post' => $post->id]);
     }
 
     public function destroy($id): RedirectResponse

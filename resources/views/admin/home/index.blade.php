@@ -22,13 +22,13 @@
             <!-- small box -->
             <div class="small-box bg-success">
                 <div class="inner">
-                    <h3>0</h3>
+                    <h3>{{ $courses }}</h3>
                     <p>Kurslar</p>
                 </div>
                 <div class="icon">
-                    <i class="ion ion-stats-bars"></i>
+                    <i class="ion ion-flash"></i>
                 </div>
-                <a href="#" class="small-box-footer">To'liq ma'lumot <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ route('course.index') }}" class="small-box-footer">To'liq ma'lumot <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -40,7 +40,7 @@
                     <p>Portfolio</p>
                 </div>
                 <div class="icon">
-                    <i class="ion ion-stats-bars"></i>
+                    <i class="ion ion-image"></i>
                 </div>
                 <a href="{{ route('portfolio.index') }}" class="small-box-footer">To'liq ma'lumot <i class="fas fa-arrow-circle-right"></i></a>
             </div>

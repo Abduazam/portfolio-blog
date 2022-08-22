@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Course;
 use App\Models\Portfolio;
 use App\Models\Post;
 use Illuminate\Contracts\Foundation\Application;
@@ -25,11 +26,14 @@ class HomeController extends Controller
         $categories = $categories->count();
         $posts = Post::all();
         $posts = $posts->count();
+        $courses = Course::all();
+        $courses = $courses->count();
 
         return view('admin.home.index', [
             'categories' => $categories,
             'portfolios' => $portfolios,
-            'posts' => $posts
+            'posts' => $posts,
+            'courses' => $courses
         ]);
     }
 }

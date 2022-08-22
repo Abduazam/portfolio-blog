@@ -23,9 +23,9 @@
                         <thead>
                         <tr>
                             <th style="width: 10px;">#</th>
-                            <th style="width: 200px;">Nomi</th>
+                            <th style="width: 150px;">Nomi</th>
                             <th style="width: 200px;">Kategoriyasi</th>
-                            <th style="width: 300px;">Ta'rif</th>
+                            <th style="width: 350px;">Ta'rif</th>
                             <th style="width: 100px;">Holati</th>
                             <th style="width: 100px;"></th>
                         </tr>
@@ -39,10 +39,10 @@
                                     @forelse($portfolio->categories as $category)
                                         <span>{{ $category->title }}, </span>
                                     @empty
-                                        <p>Nothing</p>
+                                        <span>Nothing</span>
                                     @endforelse
                                 </td>
-                                <td>{!! substr($portfolio->text, 0, 70) !!}</td>
+                                <td>{!! substr(strip_tags($portfolio->text), 0, 45); !!}</td>
                                 <td>
                                     @if($portfolio->status === 1)
                                         <span class="badge badge-success">Faol</span>

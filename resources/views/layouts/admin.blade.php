@@ -77,19 +77,25 @@
                              with font-awesome or any other icon font library -->
                         <li class="nav-item">
                             <a href="{{ route('category.index') }}" class="nav-link {{ request()->is('admin/category*') ? 'active' : '' }}">
-                                <i class="nav-icon fas fa-bars"></i>
+                                <i class="nav-icon fa fa-list"></i>
                                 <p>Kategoriyalar</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('portfolio.index') }}" class="nav-link {{ request()->is('admin/portfolio*') ? 'active' : '' }}">
-                                <i class="nav-icon far fa-image"></i>
+                                <i class="nav-icon fa fa-images"></i>
                                 <p>Portfolio</p>
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{ route('course.index') }}" class="nav-link {{ request()->is('admin/course*') ? 'active' : '' }}">
+                                <i class="nav-icon fa fa-graduation-cap"></i>
+                                <p>Kurslar</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ route('post.index') }}" class="nav-link {{ request()->is('admin/post*') ? 'active' : '' }}">
-                                <i class="nav-icon far fa-newspaper"></i>
+                                <i class="nav-icon fa fa-newspaper"></i>
                                 <p>Postlar</p>
                             </a>
                         </li>
@@ -122,9 +128,6 @@
     <script src="/backend/plugins/chart.js/Chart.min.js"></script>
     <!-- Sparkline -->
     <script src="/backend/plugins/sparklines/sparkline.js"></script>
-    <!-- JQVMap -->
-    <script src="/backend/plugins/jqvmap/jquery.vmap.min.js"></script>
-    <script src="/backend/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
     <!-- jQuery Knob Chart -->
     <script src="/backend/plugins/jquery-knob/jquery.knob.min.js"></script>
     <!-- daterangepicker -->
@@ -158,9 +161,14 @@
 
             $('textarea').summernote({
                 toolbar: [
-                    // [groupName, [list of button]]
                     ['style', ['bold', 'italic', 'underline', 'link']],
-                ]
+                ],
+                placeholder: 'Matnni kiriting..',
+                height: 170,
+                required: true,
+            }).attr({
+                id: 'text',
+                name: 'text'
             });
         });
     </script>

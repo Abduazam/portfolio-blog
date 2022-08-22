@@ -26,7 +26,7 @@
                         </tr>
                         <tr>
                             <td><b>Post matni</b></td>
-                            <td>{{ $post->text }}</td>
+                            <td>{!! $post->text !!}</td>
                         </tr>
                         <tr>
                             <td><b>Post rasmi</b></td>
