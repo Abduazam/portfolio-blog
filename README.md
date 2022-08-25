@@ -8,7 +8,7 @@ I have made it's both back and front sides. I can use admin dashboard either.
 1. git clone https://github.com/Abduazam/blog.git
 2. run command in terminal:
    
-   php artisan migrate
+   <copy>php artisan migrate</copy>
 
 3. run two spatie commands in terminal: 
    
