@@ -25,7 +25,8 @@ Admin dashboard has made by AdminLTE3. You can add new section how you want by l
 
 Category section is integrated with Portfolio section. You can add your portfolio by category.
 
-Good luck to use!
+# Good luck to use!
 If you have any questions or suggestion to improve the project contact with me:
+    
     mail: mohammedmaxsudov@gmail.com
-    tg: t.me/abduazamdev
+    tg: https://t.me/abduazamdev
