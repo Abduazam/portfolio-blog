@@ -23,7 +23,6 @@ I have made it's both back and front sides. I can use admin dashboard either.
 # Guid to use dashboard
 Admin dashboard has made by AdminLTE3. You can add new section how you want by looking adminLte3 grids. There are already 4 section: categories, portfolio, courses, posts. Every section has already tables, and controllers what work well. Every action has writter: Add, edit, show, delete. You can just perform the project. It is so simple.
 
-# !
 Category section is integrated with Portfolio section. You can add your portfolio by category.
 
 Good luck to use!
