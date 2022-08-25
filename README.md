@@ -1,5 +1,5 @@
 # About the project
-Project is made by Abduazam with PHP's Laravel framework. The project is website for make blog site. In the beginning, I wanted to made this project only for my self, but then, I decided to make it public for everyone who want to use. Just download full project and run, it will work well. So, I wrote README for who want to use this project. Before start, read it ^-^
+My first project in Laravel framework. The project is website for make blog site. In the beginning, I wanted to made this project only for my self, but then, I decided to make it public for everyone who want to use. Just download full project and run, it will work well. So, I wrote README for who want to use this project. Before start, read it ^-^
 
 # Blog site description
 I have made it's both back and front sides. I can use admin dashboard either.
