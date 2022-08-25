@@ -9,13 +9,13 @@
             @csrf
             <div class="card-body">
                 <div class="form-group">
-                    <label for="title">Kategoriya nomi</label>
-                    <input type="text" class="form-control" id="title" placeholder="Nomini yozing" name="title" value="{{ $category->title }}" required>
+                    <label for="title">Category title</label>
+                    <input type="text" class="form-control" id="title" placeholder="Write title.." name="title" value="{{ $category->title }}" required>
                 </div>
             </div>
 
             <div class="card-footer text-right">
-                <button type="submit" class="btn btn-success">Saqlash</button>
+                <button type="submit" class="btn btn-success">Save</button>
             </div>
         </form>
     </div>

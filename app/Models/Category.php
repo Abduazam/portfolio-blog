@@ -25,6 +25,6 @@ class Category extends Model
             'id',
             'id',
             'port_id'
-        );
+        )->where('portfolios.status', 1);
     }
 }

@@ -10,13 +10,13 @@
                 <div class="row w-100 h-100 p-0 m-0">
                     <div class="col-md-6 pl-0">
                         <div class="form-group">
-                            <label for="title">Kurs nomi</label>
-                            <input type="text" class="form-control" id="title" placeholder="Nomini yozing" name="title" required>
+                            <label for="title">Course title</label>
+                            <input type="text" class="form-control" id="title" placeholder="Write title.." name="title" required>
                         </div>
                     </div>
                     <div class="col-md-6 pr-0">
                         <div class="form-group">
-                            <label for="customFile">Kurs rasmi</label>
+                            <label for="customFile">Course image</label>
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="customFile" name="img">
                                 <label class="custom-file-label" for="customFile"></label>
@@ -25,16 +25,16 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="text">Kurs matni</label>
+                    <label for="text">Course text</label>
                     <textarea class="form-control course-textarea" id="text" name="text" required></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="link">Kurs linki</label>
-                    <input type="text" class="form-control" id="link" placeholder="Linkini yozing" name="link" required>
+                    <label for="link">Course link</label>
+                    <input type="text" class="form-control" id="link" placeholder="Write link.." name="link" required>
                 </div>
             </div>
             <div class="card-footer text-right">
-                <button type="submit" class="btn btn-success">Saqlash</button>
+                <button type="submit" class="btn btn-success">Save</button>
             </div>
         </form>
     </div>

@@ -9,10 +9,10 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Kurslar bo'limi</h1>
+                            <h1 class="m-0">Courses section</h1>
                         </div>
                         <div class="col-sm-6 text-right">
-                            <a href="{{ route('course.create') }}" class="btn btn-success">Qo'shish</a>
+                            <a href="{{ route('course.create') }}" class="btn btn-success">Add</a>
                         </div>
                     </div>
                 </div>
@@ -23,9 +23,9 @@
                         <thead>
                         <tr>
                             <th style="width: 10px;">#</th>
-                            <th style="width: 200px;">Nomi</th>
-                            <th style="width: 500px;">Matni</th>
-                            <th style="width: 100px;">Holati</th>
+                            <th style="width: 200px;">Title</th>
+                            <th style="width: 500px;">Text</th>
+                            <th style="width: 100px;">Status</th>
                             <th style="width: 100px;"></th>
                         </tr>
                         </thead>
@@ -37,9 +37,9 @@
                                 <td>{!! substr(strip_tags($course->text), 0, 70); !!}</td>
                                 <td>
                                     @if($course->status === 1)
-                                        <span class="badge badge-success">Faol</span>
+                                        <span class="badge badge-success">Active</span>
                                     @else
-                                        <span class="badge badge-danger">Nofaol</span>
+                                        <span class="badge badge-danger">Inactive</span>
                                     @endif
                                 </td>
                                 <td>
@@ -58,7 +58,7 @@
                         </tbody>
                     </table>
                 @else
-                    <p class="text-center mb-0">Hozircha hech qanday kurslar mavjud emas!</p>
+                    <p class="text-center mb-0">There is not any course yet!</p>
                 @endif
             </div>
         </div>

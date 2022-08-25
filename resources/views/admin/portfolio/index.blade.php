@@ -9,10 +9,10 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Portfolio bo'limi</h1>
+                            <h1 class="m-0">Portfolio section</h1>
                         </div>
                         <div class="col-sm-6 text-right">
-                            <a href="{{ route('portfolio.create') }}" class="btn btn-success">Qo'shish</a>
+                            <a href="{{ route('portfolio.create') }}" class="btn btn-success">Add</a>
                         </div>
                     </div>
                 </div>
@@ -23,10 +23,10 @@
                         <thead>
                         <tr>
                             <th style="width: 10px;">#</th>
-                            <th style="width: 150px;">Nomi</th>
-                            <th style="width: 200px;">Kategoriyasi</th>
-                            <th style="width: 350px;">Ta'rif</th>
-                            <th style="width: 100px;">Holati</th>
+                            <th style="width: 150px;">Title</th>
+                            <th style="width: 200px;">Categories</th>
+                            <th style="width: 350px;">Text</th>
+                            <th style="width: 100px;">Status</th>
                             <th style="width: 100px;"></th>
                         </tr>
                         </thead>
@@ -45,9 +45,9 @@
                                 <td>{!! substr(strip_tags($portfolio->text), 0, 45); !!}</td>
                                 <td>
                                     @if($portfolio->status === 1)
-                                        <span class="badge badge-success">Faol</span>
+                                        <span class="badge badge-success">Active</span>
                                     @else
-                                        <span class="badge badge-danger">Nofaol</span>
+                                        <span class="badge badge-danger">Inactive</span>
                                     @endif
                                 </td>
                                 <td>
@@ -66,7 +66,7 @@
                         </tbody>
                     </table>
                 @else
-                    <p class="text-center mb-0">Hozircha hech qanday portfolio mavjud emas!</p>
+                    <p class="text-center mb-0">There is not any portfolio yet!</p>
                 @endif
             </div>
         </div>

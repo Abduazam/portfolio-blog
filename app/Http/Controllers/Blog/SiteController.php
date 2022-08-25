@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Portfolio;
 use App\Models\Post;
+use App\Models\Course;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\View;
 use Illuminate\Contracts\View\Factory;
@@ -24,7 +25,11 @@ class SiteController extends Controller
 
     public function course(): Factory|View|Application
     {
-        return view('site.course');
+        $courses = Course::where('status', 1)->get();
+
+        return view('site.course', [
+            'courses' => $courses
+        ]);
     }
 
     public function portfolio(): Factory|View|Application

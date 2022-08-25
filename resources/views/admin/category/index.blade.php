@@ -9,10 +9,10 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Kategoriyalar bo'limi</h1>
+                            <h1 class="m-0">Categories section</h1>
                         </div>
                         <div class="col-sm-6 text-right">
-                            <a href="{{ route('category.create') }}" class="btn btn-success">Qo'shish</a>
+                            <a href="{{ route('category.create') }}" class="btn btn-success">Add</a>
                         </div>
                     </div>
                 </div>
@@ -23,8 +23,8 @@
                         <thead>
                         <tr>
                             <th style="width: 10px;">#</th>
-                            <th>Nomi</th>
-                            <th>Holati</th>
+                            <th>Title</th>
+                            <th>Status</th>
                             <th style="width: 70px;"></th>
                         </tr>
                         </thead>
@@ -35,9 +35,9 @@
                                 <td>{{ $category->title }}</td>
                                 <td>
                                     @if($category->status === 1)
-                                        <span class="badge badge-success">Faol</span>
+                                        <span class="badge badge-success">Active</span>
                                     @else
-                                        <span class="badge badge-danger">Nofaol</span>
+                                        <span class="badge badge-danger">Inactive</span>
                                     @endif
                                 </td>
                                 <td>
@@ -55,7 +55,7 @@
                         </tbody>
                     </table>
                 @else
-                    <p class="text-center mb-0">Hozircha hech qanday kategoriyalar mavjud emas!</p>
+                    <p class="text-center mb-0">There is not any category yet!</p>
                 @endif
             </div>
         </div>

@@ -9,12 +9,12 @@
             <div class="small-box bg-info">
                 <div class="inner">
                     <h3>{{ $posts }}</h3>
-                    <p>Postlar</p>
+                    <p>Posts</p>
                 </div>
                 <div class="icon">
                     <i class="ion ion-bag"></i>
                 </div>
-                <a href="{{ route('post.index') }}" class="small-box-footer">To'liq ma'lumot <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ route('post.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -23,12 +23,12 @@
             <div class="small-box bg-success">
                 <div class="inner">
                     <h3>{{ $courses }}</h3>
-                    <p>Kurslar</p>
+                    <p>Courses</p>
                 </div>
                 <div class="icon">
                     <i class="ion ion-flash"></i>
                 </div>
-                <a href="{{ route('course.index') }}" class="small-box-footer">To'liq ma'lumot <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ route('course.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -42,7 +42,7 @@
                 <div class="icon">
                     <i class="ion ion-image"></i>
                 </div>
-                <a href="{{ route('portfolio.index') }}" class="small-box-footer">To'liq ma'lumot <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ route('portfolio.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -52,12 +52,12 @@
             <div class="small-box bg-warning">
                 <div class="inner">
                     <h3>{{ $categories }}</h3>
-                    <p>Kategoriyalar</p>
+                    <p>Categories</p>
                 </div>
                 <div class="icon">
                     <i class="ion ion-stats-bars"></i>
                 </div>
-                <a href="{{ route('category.index') }}" class="small-box-footer">To'liq ma'lumot <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ route('category.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->

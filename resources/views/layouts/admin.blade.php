@@ -49,7 +49,7 @@
                     <a class="dropdown-item" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
                        document.getElementById('logout-form').submit();">
-                        {{ __('Chiqish') }}
+                        {{ __('Log out') }}
                     </a>
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -65,7 +65,7 @@
             <!-- Brand Logo -->
             <a href="{{ url('/admin/') }}" class="brand-link">
                 <img src="/backend/dist/img/AdminLTELogo.png" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">Panel</span>
+                <span class="brand-text font-weight-light">Dashboard</span>
             </a>
 
             <!-- Sidebar -->
@@ -78,7 +78,7 @@
                         <li class="nav-item">
                             <a href="{{ route('category.index') }}" class="nav-link {{ request()->is('admin/category*') ? 'active' : '' }}">
                                 <i class="nav-icon fa fa-list"></i>
-                                <p>Kategoriyalar</p>
+                                <p>Category</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -90,13 +90,13 @@
                         <li class="nav-item">
                             <a href="{{ route('course.index') }}" class="nav-link {{ request()->is('admin/course*') ? 'active' : '' }}">
                                 <i class="nav-icon fa fa-graduation-cap"></i>
-                                <p>Kurslar</p>
+                                <p>Course</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('post.index') }}" class="nav-link {{ request()->is('admin/post*') ? 'active' : '' }}">
                                 <i class="nav-icon fa fa-newspaper"></i>
-                                <p>Postlar</p>
+                                <p>Post</p>
                             </a>
                         </li>
                     </ul>
@@ -163,7 +163,7 @@
                 toolbar: [
                     ['style', ['bold', 'italic', 'underline', 'link']],
                 ],
-                placeholder: 'Matnni kiriting..',
+                placeholder: 'Write text..',
                 height: 170,
                 required: true,
             }).attr({

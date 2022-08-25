@@ -10,13 +10,13 @@
                 <div class="row w-100 h-100 p-0 m-0">
                     <div class="col-md-6 pl-0">
                         <div class="form-group">
-                            <label for="title">Post mavzusi</label>
-                            <input type="text" class="form-control" id="title" placeholder="Mavzuni yozing" name="title" required>
+                            <label for="title">Post title</label>
+                            <input type="text" class="form-control" id="title" placeholder="Write title.." name="title" required>
                         </div>
                     </div>
                     <div class="col-md-6 pr-0">
                         <div class="form-group">
-                            <label for="customFile">Post rasmi</label>
+                            <label for="customFile">Post image</label>
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="customFile" name="img">
                                 <label class="custom-file-label" for="customFile"></label>
@@ -25,12 +25,12 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="text">Post matni</label>
+                    <label for="text">Post text</label>
                     <textarea class="form-control" id="text" name="text" required></textarea>
                 </div>
             </div>
             <div class="card-footer text-right">
-                <button type="submit" class="btn btn-success">Saqlash</button>
+                <button type="submit" class="btn btn-success">Save</button>
             </div>
         </form>
     </div>

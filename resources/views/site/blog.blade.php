@@ -11,7 +11,7 @@
                         <a href="{{ url('article', ['post' => $post->id]) }}" class="article-container d-flex w-100 text-dark border-bottom">
                             <div class="col-md-11 py-3 ps-3">
                                 <h3>{{ $post->title }}</h3>
-                                <p class="font-2 small mb-0">{{ substr($post->text, 0, 50) }}</p>
+                                <p class="font-2 small mb-0">{!! substr($post->text, 0, 50) !!}..</p>
                             </div>
                             <div class="col-md-1 d-flex align-items-center justify-content-end pe-3">
                                 <i class="fa fa-long-arrow-right fs-6"></i>
@@ -19,7 +19,7 @@
                         </a>
                     </div>
                 @empty
-                    <p>Hozircha hech qanday postlar mavjud emas!</p>
+                    <p>There is not any post yet!</p>
                 @endforelse
             </div>
         </div>
