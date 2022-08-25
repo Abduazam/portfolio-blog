@@ -35,23 +35,18 @@ class SiteController extends Controller
     public function portfolio(): Factory|View|Application
     {
         $categories = Category::where('status', 1)->get();
+        $portfolios = Portfolio::where('status', 1)->get();
 
         return view('site.portfolio', [
-            'categories' => $categories
+            'categories' => $categories,
+            'portfolios' => $portfolios
         ]);
     }
 
     public function project($id): Factory|View|Application
     {
-        $portfolio = Portfolio::find($id);
-        if (!empty($portfolio) && isset($portfolio)) {
-            return view('site.project', [
-                'portfolio' => $portfolio,
-            ]);
-        } else {
-            return abort(404);
-        }
-
+        $portfolio = Portfolio::findOrFail($id);
+        return view('site.project',  compact('portfolios'));
     }
 
     public function blog(): Factory|View|Application
@@ -65,16 +60,8 @@ class SiteController extends Controller
 
     public function article($id): Factory|View|Application
     {
-        $post = Post::find($id);
-        if (!empty($post) && isset($post)) {
-            ++$post->view;
-            $post->save();
-
-            return view('site.article', [
-                'post' => $post,
-            ]);
-        } else {
-            return abort(404);
-        }
+        $post = Post::findOrFail($id);
+        $post->increment('view');
+        return view('site.article',  compact('post'));
     }
 }

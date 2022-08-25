@@ -8,7 +8,7 @@
             <div class="blog-container d-flex justify-content-center flex-column align-items-center">
                 @forelse($posts as $post)
                     <div class="col-md-9 p-0">
-                        <a href="{{ url('article', ['post' => $post->id]) }}" class="article-container d-flex w-100 text-dark border-bottom">
+                        <a href="{{ url('blog', ['post' => $post->id]) }}" class="article-container d-flex w-100 text-dark border-bottom">
                             <div class="col-md-11 py-3 ps-3">
                                 <h3>{{ $post->title }}</h3>
                                 <p class="font-2 small mb-0">{!! substr($post->text, 0, 50) !!}..</p>
