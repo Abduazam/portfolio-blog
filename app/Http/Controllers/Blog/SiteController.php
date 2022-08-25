@@ -44,10 +44,14 @@ class SiteController extends Controller
     public function project($id): Factory|View|Application
     {
         $portfolio = Portfolio::find($id);
+        if (!empty($portfolio) && isset($portfolio)) {
+            return view('site.project', [
+                'portfolio' => $portfolio,
+            ]);
+        } else {
+            return abort(404);
+        }
 
-        return view('site.project', [
-            'portfolio' => $portfolio,
-        ]);
     }
 
     public function blog(): Factory|View|Application
@@ -62,11 +66,15 @@ class SiteController extends Controller
     public function article($id): Factory|View|Application
     {
         $post = Post::find($id);
-        ++$post->view;
-        $post->save();
+        if (!empty($post) && isset($post)) {
+            ++$post->view;
+            $post->save();
 
-        return view('site.article', [
-            'post' => $post,
-        ]);
+            return view('site.article', [
+                'post' => $post,
+            ]);
+        } else {
+            return abort(404);
+        }
     }
 }
