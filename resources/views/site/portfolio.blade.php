@@ -6,6 +6,7 @@
     <div class="container-fluid py-5" id="about">
         <div class="container px-md-5 py-3">
             <div class="about-container d-flex justify-content-center">
+                @if(!empty($portfolios->items))
                 <div class="col-md-7 p-0 fadeInUp">
                     <?php $i = 1; $j = 1; ?>
                     <div class="list-group d-flex flex-row border-0" id="list-tab" role="tablist">
@@ -35,6 +36,9 @@
                         @endforeach
                     </div>
                 </div>
+                @else
+                    <p class="text-center">There is not any portfolios yet here!</p>
+                @endif
             </div>
         </div>
     </div>

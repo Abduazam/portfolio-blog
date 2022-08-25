@@ -25,7 +25,7 @@ Route::get('/about', [SiteController::class, 'about']);
 Route::get('/portfolio', [SiteController::class, 'portfolio']);
 Route::get('/portfolio/{id}', [SiteController::class, 'project'])->where(['id' => '[0-9]+']);
 Route::get('/blog', [SiteController::class, 'blog']);
-Route::get('/article/{id}', [SiteController::class, 'article'])->where(['id' => '[1-9]+']);
+Route::get('/blog/{id}', [SiteController::class, 'article'])->where(['id' => '[0-9]+']);
 Route::get('/course', [SiteController::class, 'course']);
 
 // AUTH ROUTES
