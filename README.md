@@ -9,22 +9,23 @@ I have made it's both back and front sides. I can use admin dashboard either.
 
     <pre>git clone https://github.com/Abduazam/blog.git</pre>
     
-2. if you are working on local just leave this step, move to 3, but if you are working on online hosting create .htaccess file in project and write this in .htaccess file:
+2. if you are working on online hosting create .htaccess file in project and write this in .htaccess file:
 
+    <i><u>if you are working on local just leave this step, move to 3</u></i>
     <pre>RewriteEngine On
    RewriteCond %{REQUEST_URI} !^/public
    Rewriterule ^(.*)$ public/ [L]</pre>
 
 3. edit .env file
 
-    ![image](https://user-images.githubusercontent.com/58428722/186667052-977270a3-28de-4f62-8340-1a4e28b784dc.png)
-    
     <i>write your own db info</i>
-
+    
+    ![image](https://user-images.githubusercontent.com/58428722/186667052-977270a3-28de-4f62-8340-1a4e28b784dc.png)
 
 4. open project and run comment in terminal:
 
-    <pre>php artisan serve</pre>
+    <i><u>if you are working in local just leave this step, mote to 5</u></i>
+    <pre>php artisan serve</pre> 
 
 5. run command in terminal:
    
