@@ -7,11 +7,16 @@ I have made it's both back and front sides. I can use admin dashboard either.
 # Steps to run project
 1. git clone https://github.com/Abduazam/blog.git
 2. run command in terminal:
-   1) php artisan migrate
-3. run two spatie commands in terminal: 
-   1) php artisan permission:create-role admin 
    
-   2) php artisan permission:create-role user
+   php artisan migrate
+
+3. run two spatie commands in terminal: 
+   
+   php artisan permission:create-role admin 
+   
+   
+   php artisan permission:create-role user
+
 4. to enter dashboard first register (if you cannot find register just write your_domen/register)
 5. open database end enter table:
    1) model_has_roles
