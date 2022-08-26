@@ -24,7 +24,7 @@ I have made it's both back and front sides. I can use admin dashboard either.
 
 4. open project and run comment in terminal:
 
-    <i><u>if you are working in online hosting just leave this step, mote to 5</u></i>
+    <i><u>if you are working in online hosting just leave this step, move to 5</u></i>
     <pre>php artisan serve</pre> 
 
 5. run command in terminal:
